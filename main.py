@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
 # Global variables and settings
-path = 'curves/smallBox_210.CSV'
+path = 'curves/bigBox_220.CSV'
 steady_thresh = 12
 p_heating = [25, 250, 50, 30]  # [initial, final, tc, offset]
 p_cooling = [250, 26, 500, 0]
