@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
 # Global variables and settings
+path = 'curves/smallBox_210.CSV'
 steady_thresh = 12
 p_heating = [25, 250, 50, 30]  # [initial, final, tc, offset]
 p_cooling = [250, 26, 500, 0]
@@ -29,6 +30,7 @@ def init_fin_exp_str(initial, final, tc, offset):
     print(exp)
     return exp
 
+
 # Append a row to a dataframe
 def df_append(df, row):
     df.loc[len(df.index)] = row
@@ -36,7 +38,7 @@ def df_append(df, row):
 
 def main():
     # Load and condition main data
-    data = pd.read_excel('hotplate profile.xlsx')
+    data = pd.read_csv(path, encoding='unicode_escape')
     for col in data.columns:
         if 'EnviroPad' in col or 'Unnamed' in col:
             data.drop(col, axis=1, inplace=True)
